@@ -34,7 +34,7 @@ deploy:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   # Corrected way from lecture 159
-  secret_access_key: $AWS_SECRET_KEY
+  # secret_access_key: $AWS_SECRET_KEY
   # Video showed from lecture 160
-  # secret_access_key:
-  #   secure: $AWS_SECRET_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
