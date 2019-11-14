@@ -22,3 +22,19 @@ after_success:
   - docker push youngchullim/multi-nginx
   - docker push youngchullim/multi-server
   - docker push youngchullim/multi-worker
+
+deploy:
+  provider: elasticbeanstalk
+  regoin: us-west-1
+  app: multi-docker
+  env: MultiDocker-env
+  bucket_name: elasticbeanstalk-us-west-1-545095728638
+  bucket_path: docker-multi
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  # Corrected way from lecture 159
+  secret_access_key: $AWS_SECRET_KEY
+  # Video showed from lecture 160
+  # secret_access_key:
+  #   secure: $AWS_SECRET_KEY
